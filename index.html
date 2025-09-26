@@ -214,50 +214,94 @@
               }
             }
           </script>    <!-- President's Note Section -->
-    <section id="president-note" class="note-section section" style="background-color:#4d0909; color:white; padding:80px 0;">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 style="font-weight:700; font-size:2.5rem; margin-bottom:25px; border-bottom:3px solid white; display:inline-block; padding-bottom:8px;">
-              President’s Note
-            </h2>
-            <p style="font-size:1.1rem; line-height:1.8; margin-top:20px;">
-              Distinguished delegates, it is my utmost honor to welcome you to <strong>ŞEOMUN’26</strong>. 
-              Our mission is to foster diplomacy, critical thinking, and leadership skills, while carrying the 
-              legacy of those who shaped international cooperation. As President, I invite you to not only 
-              debate, but also to build friendships and unforgettable experiences that transcend the 
-              boundaries of our committees.
-            </p>
-            <p style="margin-top:30px; font-style:italic; font-weight:500;">
-              – President of ŞEOMUN’26
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Notes Section -->
+<section id="notes" class="notes-section">
+  <div class="container" data-aos="fade-up">
 
-    <!-- Secretariat's Note Section -->
-    <section id="secretariat-note" class="note-section section" style="background-color:#ffffff; color:#4d0909; padding:80px 0;">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 style="font-weight:700; font-size:2.5rem; margin-bottom:25px; border-bottom:3px solid #4d0909; display:inline-block; padding-bottom:8px;">
-              Secretariat’s Note
-            </h2>
-            <p style="font-size:1.1rem; line-height:1.8; margin-top:20px;">
-              Dear participants, <strong>ŞEOMUN’26</strong> is not merely a conference—it is a journey of 
-              intellectual growth and collaboration. The Secretariat is committed to ensuring an 
-              academically rigorous yet welcoming atmosphere where every delegate can flourish. 
-              We hope you leave this conference with sharpened skills, lifelong memories, and 
-              a strengthened belief in the power of diplomacy.
-            </p>
-            <p style="margin-top:30px; font-style:italic; font-weight:500;">
-              – The Secretariat of ŞEOMUN’26
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- President's Note -->
+    <div class="note-card president" data-aos="zoom-in" data-aos-delay="100">
+      <h2 class="note-title">President’s Note</h2>
+      <p class="note-text">
+        Distinguished delegates, it is my utmost honor to welcome you to <strong>ŞEOMUN’26</strong>.
+        Our mission is to foster diplomacy, critical thinking, and leadership skills, while carrying
+        the legacy of those who shaped international cooperation. As President, I invite you to not
+        only debate, but also to build friendships and unforgettable experiences that transcend
+        the boundaries of our committees.
+      </p>
+      <p class="note-signature">– President of ŞEOMUN’26</p>
+    </div>
+
+    <!-- Secretariat's Note -->
+    <div class="note-card secretariat" data-aos="zoom-in" data-aos-delay="200">
+      <h2 class="note-title">Secretariat’s Note</h2>
+      <p class="note-text">
+        Dear participants, <strong>ŞEOMUN’26</strong> is not merely a conference—it is a journey of
+        intellectual growth and collaboration. The Secretariat is committed to ensuring an
+        academically rigorous yet welcoming atmosphere where every delegate can flourish.
+        We hope you leave this conference with sharpened skills, lifelong memories, and a
+        strengthened belief in the power of diplomacy.
+      </p>
+      <p class="note-signature">– The Secretariat of ŞEOMUN’26</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .notes-section {
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  }
+
+  .note-card {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .note-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  }
+
+  .note-card.president {
+    background: #4d0909;
+    color: #fff;
+    border-left: 6px solid #fff;
+  }
+
+  .note-card.secretariat {
+    background: #fff;
+    color: #4d0909;
+    border-left: 6px solid #4d0909;
+  }
+
+  .note-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .note-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 35px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .note-signature {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+</style>
+
 
           <div class="swiper-wrapper align-items-center">
             <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
