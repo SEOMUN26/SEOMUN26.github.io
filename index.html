@@ -1,4 +1,4 @@
-f<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,6 +39,7 @@ f<!DOCTYPE html>
       border-radius: 14px;
       padding: 40px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 50px;
     }
 
     .letter-title {
@@ -65,15 +66,12 @@ f<!DOCTYPE html>
 </head>
 
 <body class="index-page">
-
-  <!-- Header -->
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/seomun-logo-1.jpg" alt="">
         <h1>ŞEOMUN'26</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
@@ -84,13 +82,11 @@ f<!DOCTYPE html>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
       <a class="btn-getstarted" href="index.html#about">Apply</a>
     </div>
   </header>
 
   <main class="main">
-
     <!-- Hero Section -->
     <section id="hero" class="hero section" style="position:relative; text-align:center;">
       <img src="assets/img/IMG_4429.JPG" alt="" data-aos="fade-in" style="width:100%; height:auto;">
@@ -98,8 +94,6 @@ f<!DOCTYPE html>
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <h1 data-aos="fade-up" data-aos-delay="100" style="color:white; font-size:4rem; margin-bottom:20px; font-family: 'Times New Roman', Times, serif;">DIPLOMACY THROUGH LEGACY</h1>
-
-            <!-- Countdown -->
             <div id="countdown-container" style="display:flex; justify-content:center; gap:20px;">
               <div class="count-box-container">
                 <div class="count-box" id="days">0</div><span class="label">d</span>
@@ -119,18 +113,44 @@ f<!DOCTYPE html>
       </div>
     </section>
 
-    <!-- President Letter -->
-    <section id="president-letter" class="letter-section">
+    <script>
+      const targetDate = new Date('January 17, 2026 00:00:00').getTime();
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        if (distance < 0) {
+          document.getElementById('days').innerHTML = 0;
+          document.getElementById('hours').innerHTML = 0;
+          document.getElementById('minutes').innerHTML = 0;
+          document.getElementById('seconds').innerHTML = 0;
+          return;
+        }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById('days').innerHTML = days;
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+
+    <!-- Letters Section -->
+    <section class="letter-section">
       <div class="container">
+        <!-- President Letter -->
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="letter-content">
               <h2 class="letter-title">Letter From The President</h2>
               <p class="letter-body">
                 Dear Delegates,<br><br>
-                It is my immense pleasure to welcome you to ŞEOMUN'26. As President, I am thrilled to see passionate young minds come together to engage in diplomacy, debate, and collaborative problem-solving. Our conference aims to foster understanding, inspire leadership, and create a space where innovative solutions to global challenges can be discussed. <br><br>
-                The responsibility of guiding this event and working alongside our dedicated secretariat has been incredibly rewarding. We have meticulously prepared workshops, committee simulations, and interactive activities to ensure that your participation is both educational and memorable. We believe that every voice has value, and every delegate can contribute to shaping the discussions in meaningful ways. <br><br>
-                As President, I encourage you to actively participate, challenge assumptions respectfully, and cultivate connections with delegates from diverse backgrounds. Through dialogue, negotiation, and critical thinking, we hope you will experience the transformative power of diplomacy. <br><br>
+                It is my immense pleasure to welcome you to ŞEOMUN'26. As President, I am thrilled to see passionate young minds come together to engage in diplomacy, debate, and collaborative problem-solving. Our conference aims to foster understanding, inspire leadership, and create a space where innovative solutions to global challenges can be discussed.<br><br>
+                The responsibility of guiding this event and working alongside our dedicated secretariat has been incredibly rewarding. We have meticulously prepared workshops, committee simulations, and interactive activities to ensure that your participation is both educational and memorable. We believe that every voice has value, and every delegate can contribute to shaping the discussions in meaningful ways.<br><br>
+                As President, I encourage you to actively participate, challenge assumptions respectfully, and cultivate connections with delegates from diverse backgrounds. Through dialogue, negotiation, and critical thinking, we hope you will experience the transformative power of diplomacy.<br><br>
                 Together, we uphold the tradition of excellence, nurture our community, and celebrate the diverse perspectives that each delegate brings. I hope your experience at ŞEOMUN'26 will be transformative, challenging, and unforgettable.<br><br>
                 Best wishes,<br>
                 <span class="letter-signature">Yusuf İslam İlkis<br>President</span>
@@ -138,21 +158,17 @@ f<!DOCTYPE html>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Secretary-General Letter -->
-    <section id="sg-letter" class="letter-section">
-      <div class="container">
+        <!-- Secretary-General Letter -->
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="letter-content">
-              <h2 class="letter-title">Letter From The Secretary-General</h2>
+              <h2 class="letter-title">Letter From The Secretaries-General</h2>
               <p class="letter-body">
                 Dear Delegates,<br><br>
                 It is with immense pride and great enthusiasm that we invite you all to the seventh edition of ŞEOMUN'26, which will be held this July at our historic campus.<br><br>
                 Our names are Defne Yıldız and Eren Ertaş, and we have had the honor of being part of ŞEOMUN for several years. In the past, we have served in various roles, including Academic Assistants and Under-Secretary-Generals, and now we are proud to serve as your Secretaries-General. Being part of this conference has been transformative for us and it is a privilege to carry forward the legacy of those before us.<br><br>
-                ŞEOMUN has always been more than just a conference; it is a community, a platform, and a tradition of excellence that inspires growth, understanding, and connection. Every year, it gathers the brightest minds to discuss pressing global issues. Our diverse committees will challenge delegates to develop meaningful solutions, debate passionately, and forge lifelong connections. <br><br>
+                ŞEOMUN has always been more than just a conference; it is a community, a platform, and a tradition of excellence that inspires growth, understanding, and connection. Every year, it gathers the brightest minds to discuss pressing global issues. Our diverse committees will challenge delegates to develop meaningful solutions, debate passionately, and forge lifelong connections.<br><br>
                 In this year's sessions, you will encounter complex global issues, engage in thorough research, and collaborate to draft resolutions that could serve as templates for real-world diplomacy. The skills you acquire—public speaking, negotiation, critical thinking—will extend far beyond this conference, shaping your development as a global citizen and future leader.<br><br>
                 On behalf of the entire Secretariat, we extend our warmest welcome to ŞEOMUN'26. Let us come together to honor this tradition, build on its legacy, and create yet another unforgettable chapter in its story.<br><br>
                 Best wishes,<br>
@@ -163,94 +179,3 @@ f<!DOCTYPE html>
         </div>
       </div>
     </section>
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": { "delay": 5000 },
-              "slidesPerView": "auto",
-              "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true },
-              "breakpoints": { "320": {"slidesPerView": 2,"spaceBetween": 40}, "480": {"slidesPerView": 3,"spaceBetween": 60}, "640": {"slidesPerView": 4,"spaceBetween": 80}, "992": {"slidesPerView": 6,"spaceBetween": 120} }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section section-bg dark-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Applying</h2>
-        <p>Choose the registration option that suits your participation in our MUN conference</p>
-      </div>
-      <div class="container">
-        <div class="row g-4 g-lg-0">
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Apply As A Board Member</h3>
-              <h4><sup>TL</sup>650</h4>
-              <div class="text-center"><a href="#" class="buy-btn">Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-item">
-              <h3>Apply As A Individual Delegate</h3>
-              <h4><sup>TL</sup>950</h4>
-              <div class="text-center"><a href="#" class="buy-btn">Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Apply As A Delegation</h3>
-              <h4><sup>TL</sup>950</h4>
-              <div class="text-center"><a href="#" class="buy-btn">Apply Now</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>MUN Frequently Asked Questions</h2>
-        <p>Answers to common questions about participating in Model United Nations</p>
-      </div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-            <div class="faq-container">
-              <div class="faq-item faq-active">
-                <h3>What is a Model United Nations (MUN)?</h3>
-                <div class="faq-content">
-                  <p>MUN is an educational simulation where students role-play as delegates of the United Nations. Participants debate global issues, draft resolutions, and improve skills in diplomacy, negotiation, and public speaking.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div>
-              <div class="faq-item">
-                <h3>Who can participate in a MUN conference?</h3>
-                <div class="faq-content">
-                  <p>Any highschool student interested in international relations, public speaking, or debate can join. Delegates are usually grouped by highschool and assigned a country or committee to represent.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div>
-              <div class="faq-item">
-                <h3>Do I need prior experience to join MUN?</h3>
-                <div class="faq-content">
-                  <p>No prior experience is necessary. Beginners can learn the basics of MUN through workshops and guides provided by the
