@@ -62,10 +62,88 @@
       color: #b22222;
       margin-top: 30px;
     }
+
+    /* Countdown styles */
+    .count-box-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .count-box {
+      background-color: #4d0909;
+      color: white;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      border-radius: 12px;
+      border: 2px solid white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .count-box:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .label {
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Pricing */
+    .pricing-item {
+      background: #ffffff;
+      border: 2px solid #b22222;
+      border-radius: 14px;
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .pricing-item h3 {
+      color: #b22222;
+      margin-bottom: 20px;
+    }
+
+    .pricing-item h4 {
+      font-size: 2rem;
+      color: #4d0909;
+      margin-bottom: 20px;
+    }
+
+    .buy-btn {
+      background-color: #b22222;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .buy-btn:hover {
+      background-color: #800000;
+      color: white;
+    }
+
+    .section-bg {
+      background-color: #fdf7f7;
+    }
+
+    .dark-background {
+      background-color: #4d0909;
+      color: white;
+    }
   </style>
 </head>
 
 <body class="index-page">
+
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -75,18 +153,20 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="Comittees.html">Comittees</a></li>
-          <li><a href="OurTeam.html">Our Club</a></li>
-          <li><a href="#team">More Info</a></li>
+          <li><a href="#committees">Comittees</a></li>
+          <li><a href="#letters">Letters</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="index.html#about">Apply</a>
+      <a class="btn-getstarted" href="#pricing">Apply</a>
     </div>
   </header>
 
   <main class="main">
+
     <!-- Hero Section -->
     <section id="hero" class="hero section" style="position:relative; text-align:center;">
       <img src="assets/img/IMG_4429.JPG" alt="" data-aos="fade-in" style="width:100%; height:auto;">
@@ -139,7 +219,7 @@
     </script>
 
     <!-- Letters Section -->
-    <section class="letter-section">
+    <section id="letters" class="letter-section">
       <div class="container">
         <!-- President Letter -->
         <div class="row justify-content-center">
@@ -179,3 +259,119 @@
         </div>
       </div>
     </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {"delay": 5000},
+              "slidesPerView": "auto",
+              "pagination": {"el": ".swiper-pagination","type": "bullets","clickable": true},
+              "breakpoints": {
+                "320": {"slidesPerView": 2,"spaceBetween": 40},
+                "480": {"slidesPerView": 3,"spaceBetween": 60},
+                "640": {"slidesPerView": 4,"spaceBetween": 80},
+                "992": {"slidesPerView": 6,"spaceBetween": 120}
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section section-bg">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Choose the registration option that suits your participation in our MUN conference</p>
+      </div>
+      <div class="container">
+        <div class="row g-4 g-lg-0">
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Apply As A Board Member</h3>
+              <h4><sup>TL</sup>650</h4>
+              <div class="text-center"><a href="#" class="buy-btn">Apply Now</a></div>
+            </div>
+          </div>
+          <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+              <h3>Apply As A Individual Delegate</h3>
+              <h4><sup>TL</sup>950</h4>
+              <div class="text-center"><a href="#" class="buy-btn">Apply Now</a></div>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Apply As A Delegation</h3>
+              <h4><sup>TL</sup>950</h4>
+              <div class="text-center"><a href="#" class="buy-btn">Apply Now</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>MUN Frequently Asked Questions</h2>
+        <p>Answers to common questions about participating in Model United Nations</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3>What is a Model United Nations (MUN)?</h3>
+                <div class="faq-content">
+                  <p>MUN is a simulation of the United Nations where students act as delegates, discussing global issues and drafting resolutions.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <h3>Who can participate?</h3>
+                <div class="faq-content">
+                  <p>High school and university students with an interest in diplomacy, public speaking, and international relations.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need prior experience?</h3>
+                <div class="faq-content">
+                  <p>No prior experience is required. We provide all necessary training and resources for new delegates.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p>© 2026 ŞEOMUN'26. All Rights Reserved.</p>
+            <p>Designed by ŞEOMUN Club</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
