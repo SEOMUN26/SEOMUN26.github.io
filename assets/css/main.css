@@ -254,7 +254,7 @@ h6 {
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background-color: #4A1111;
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -264,7 +264,7 @@ h6 {
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
+  color: #200101;
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
