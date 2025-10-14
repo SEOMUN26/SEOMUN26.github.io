@@ -143,10 +143,12 @@
 .committee-item img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain; /* Değişiklik burada */
+  background-color: #000; /* Arka plan boşluklarda siyah olur, istersen kaldır */
   border-radius: 10px;
+  margin-bottom: 15px;
 }
+
 
     .committee-item h4 {
       font-size: 1.3rem;
@@ -242,7 +244,7 @@
 
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="committee-item" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/img/HCC.jpg" alt="HCC">
+            <img src="assets/img/HCCUN.jpg" alt="HCC">
             <h4>HCC</h4>
             <p>Historical Crisis Committee</p>
           </div>
