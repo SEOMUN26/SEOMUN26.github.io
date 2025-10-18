@@ -17,7 +17,7 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -66,25 +66,51 @@ function updateCountdown() {
 // Run every second
 setInterval(updateCountdown, 1000);
 updateCountdown();
+ document.addEventListener('DOMContentLoaded', function () {
+    const navMenu = document.querySelector('#navmenu');
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const overlay = document.querySelector('#nav-overlay');
+
+    toggle.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+
+      // Menü açıldığında ikon değişsin
+      if (navMenu.classList.contains('active')) {
+        toggle.classList.remove('bi-list');
+        toggle.classList.add('bi-x');
+      } else {
+        toggle.classList.remove('bi-x');
+        toggle.classList.add('bi-list');
+      }
+    });
+
+    // Overlay'e tıklanınca menü kapansın
+    overlay.addEventListener('click', function () {
+      navMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      toggle.classList.remove('bi-x');
+      toggle.classList.add('bi-list');
+    });
+  });
 </script>
 
 <body class="index-page">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center sticky-top">
-  <div class="container-fluid container-xl position-relative d-flex align-items-center">
-    
+<header id="header" class="header d-flex align-items-center sticky-top" style="z-index:1000;">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
     <!-- Sol kısım: Logo ve ŞEOMUN26 -->
     <a href="index.html" class="logo d-flex align-items-center" style="gap:10px;">
-     
-      <img src="assets/img/ŞEOMUN_logo-1.png" alt="" style="width:60px; height:auto;"> <!-- doğal oran korundu -->
-       <h1 style="font-family: 'Anton', sans-serif; color:#e4e4e4; margin:0; font-size:2rem;">ŞEOMUN'26</h1>
+      <img src="assets/img/SEOMUNLOGO3.png" alt="SEOMUN Logo" style="width:50px; height:100px; object-fit:contain;">
+      <h1 style="font-family: 'Anton', sans-serif; color:#e4e4e4; margin:0; font-size:2rem;">ŞEOMUN'26</h1>
     </a>
 
+    <!-- NAVBAR -->
     <nav id="navmenu" class="navmenu ms-auto">
-      <ul>
+      <ul class="mb-0">
         <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="Comittees.html">Comittees</a></li>
+        <li><a href="Comittees.html">Committees</a></li>
         <li><a href="OurTeam.html">Our Club</a></li>
         <li><a href="#team">More Info</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -93,36 +119,17 @@ updateCountdown();
     </nav>
   </div>
 </header>
-
-
+<div id="nav-overlay"></div>
   <!-- ======= Main ======= -->
   <main class="main">
 
 <section id="hero" class="hero section" style="position:relative; height:100vh; overflow:hidden;">
-  <img src="assets/img/IMG_4429.JPG" alt="Hero Image" style="width:100%; height:100%; object-fit:cover;">
+  <img src="assets/img/UNPHOTO4.jpg" alt="Hero Image" style="width:100%; height:100%; object-fit:cover;">
 
-  <div class="hero-overlay" style="
-        position:absolute;
-        top:50%;
-        left:5%;
-        transform:translateY(-50%);
-        display:flex;
-        flex-direction:column;
-        gap:30px;
-        max-width:500px;
-        z-index:2;
-      ">
-    <h1 class="hero-title" style="
-        font-family:'Allura', cursive;
-        font-size:4rem;
-        color:#ffdddd;
-        margin:0;
-      ">CARVE THE FUTURE</h1>
+  <div class="hero-overlay">
+    <h1 class="hero-main">ŞEOMUN'26</h1>
 
-    <div id="countdown-container" style="
-        display:flex;
-        gap:15px;
-      ">
+    <div id="countdown-container" class="countdown-container">
       <div class="countdown-box">
         <div class="count-number" id="days">0</div>
         <div class="count-label">Days</div>
@@ -140,27 +147,47 @@ updateCountdown();
         <div class="count-label">Seconds</div>
       </div>
     </div>
+
+    <h1 class="hero-title">CARVE THE FUTURE</h1>
   </div>
-</section> 
-<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <!-- End Hero -->
-                                     
-    <style>
-      .hero-overlay {
+</section>
+
+<!-- End Hero -->
+
+<style>
+/* === HERO SECTION === */
+.hero-overlay {
   position: absolute;
   top: 50%;
-  left: 5%; /* sol kenara yakın */
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 25px; /* carve ile countdown arası boşluk */
-  max-width: 500px;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  z-index: 2;
+}
+
+.hero-main {
+  font-family: 'Anton', sans-serif;
+  color: #e4e4e4;
+  margin: 0;
+  font-size: 5rem;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .hero-title {
   font-family: 'Allura', cursive;
-  font-size: 3rem; /* yüzde 30 büyüme gibi büyük */
-  color: #ffdddd;
+  font-size: 3rem;
+  color: #f0f0f0;
   margin: 0;
   transition: transform 0.3s ease;
 }
@@ -168,86 +195,9 @@ updateCountdown();
   transform: scale(1.05);
 }
 
-/* countdown zaten mevcut stilde flex ile yatay dizilmiş durumda */
-.countdown-container {
-  display: flex;
-  justify-content: flex-start;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-     .carve-future {
-    font-family: 'Allura', cursive;
-    color: #ffdddd;
-    font-size: 3rem;
-    margin-top: 25px;
-    transition: transform 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-  }
-  .carve-future:hover {
-    transform: scale(1.08);
-    color: #ffbbbb;
-  }
-
-  /* Countdown sola hizalama */
-  .countdown-container {
-    justify-content: flex-start;
-  }
-
-  /* Navbar hover efektleri */
-  #header a {
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  #header a:hover {
-    color: #3f0503;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-    .carve-future {
-      font-size: 2.2rem;
-    }
-    #hero .container {
-      left:5%;
-      width:90%;
-    }
-  }
-      #header .logo h1 {
-  color: #e4e4e4; /* or any color you like */
-  font-family: 'Anton', sans-serif;
-  margin: 0;
-}
-
-      .title,h1{
-       font-family: 'Anton', sans-serif ;
-       color: #464646;
-      }
-    .countdown-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  perspective: 1000px; /* for smooth 3D flip effect */
-}
-
-#header {
-  background: linear-gradient(145deg, #860000, #3b0d0d); /* darker, near-black with deep red */
-  transition: background 0.4s ease; /* smooth color transitions */
-}
-#header a {
-  color: #fff;
-   font-weight: 500;
-  transition: color 0.3s ease;
-}
-#header a:hover {
-  color: #3f0503; /* subtle reddish highlight */
-}
-
-
+/* === COUNTDOWN BOXES === */
 .countdown-box {
-  background: linear-gradient(145deg, #1a0a0a, #3b0d0d); /* matches navbar */
+  background: linear-gradient(145deg, #1a0a0a, #3b0d0d);
   border-radius: 20px;
   padding: 25px 35px;
   text-align: center;
@@ -262,11 +212,9 @@ updateCountdown();
   box-shadow: 0 14px 40px rgba(0,0,0,0.7);
 }
 
-
 .count-number {
   font-size: 3rem;
-  display: inline-block;
-  color: #ffdddd; /* soft contrast for readability */
+  color: #ffdddd;
   animation: roll 0.6s ease-in-out;
 }
 .count-label {
@@ -278,26 +226,25 @@ updateCountdown();
   color: rgba(255, 255, 255, 0.85);
   transition: color 0.3s ease;
 }
-
-/* Pop animation for numbers */
-@keyframes pop {
-  0% { transform: scale(0.8); opacity: 0.5; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
-}
 .count-label:hover {
-  color: #d9534f; /* subtle red highlight on hover */
+  color: #9c1915;
 }
 
-/* Smooth rolling animation */
+/* === ANIMATIONS === */
 @keyframes roll {
   0% { transform: rotateX(90deg); opacity: 0; }
   50% { transform: rotateX(-20deg); opacity: 0.7; }
   100% { transform: rotateX(0deg); opacity: 1; }
 }
 
-/* Responsive adjustments */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+  .hero-main {
+    font-size: 3.5rem;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
   .countdown-box {
     min-width: 80px;
     padding: 20px;
@@ -310,9 +257,85 @@ updateCountdown();
   }
 }
 
+/* === HEADER & OTHER EXISTING STYLES === */
+#header {
+  background: linear-gradient(145deg, #640000, #3b0d0d);
+  transition: background 0.4s ease;
+}
+#header a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+#header a:hover {
+  color: #5f5c5c;
+}
+#header .logo h1 {
+  color: #e4e4e4;
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+}
+.navmenu ul li a {
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
 
+  .navmenu ul li a:hover {
+    color: #4e0505;
+  }
 
+  /* 📱 Mobil görünüm */
+  @media (max-width: 991px) {
+    .navmenu ul {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 80px 20px;
+      height: 100vh;
+      width: 40vw; /* Sağ panel genişliği */
+      background-color: #400000; /* Bordo renk */
+      position: fixed;
+      top: 0;
+      right: -100%;
+      transition: right 0.4s ease;
+      z-index: 9999;
+    }
 
+    .navmenu.active ul {
+      right: 0;
+    }
+
+    .mobile-nav-toggle {
+      font-size: 1.9rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .mobile-nav-toggle.bi-x {
+      color: #fff;
+    }
+
+    /* Arka plan overlay */
+    #nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease;
+      z-index: 9998;
+    }
+
+    #nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 /* Letter kutuları - şık & profesyonel */
 #letters .letter-content {
   background: #ffffff;
@@ -368,6 +391,7 @@ updateCountdown();
   font-weight: 600;
   color: #800000;
   margin-top: 26px;
+
   display: block;
   text-align: right;
   font-style: italic;
@@ -379,8 +403,8 @@ updateCountdown();
   background-attachment: fixed;
   padding: 60px 0;
 }
-      
-    </style>
+</style>
+
 
     <script>
       const targetDate = new Date('January 17, 2026 00:00:00').getTime();
@@ -680,6 +704,13 @@ Best Regards,
 
               <div class="faq-item">
                 <h3>Do I need prior experience to join MUN?</h3>
+                <div class="faq-content">
+                  <p>No prior experience is necessary. Beginners can learn the basics of MUN through workshops and guides provided by the conference organizers.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+                 <div class="faq-item">
+                <h3>Is there free accommadition?</h3>
                 <div class="faq-content">
                   <p>No prior experience is necessary. Beginners can learn the basics of MUN through workshops and guides provided by the conference organizers.</p>
                 </div>
